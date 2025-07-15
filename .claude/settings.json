@@ -1,10 +1,6 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(mkdir:*)",
-      "Bash(mv:*)",
-      "Bash(rm:*)"
-    ],
+    "allow": ["Bash(mkdir:*)", "Bash(mv:*)", "Bash(rm:*)", "Bash(pnpm:*)"],
     "deny": []
   }
 }
