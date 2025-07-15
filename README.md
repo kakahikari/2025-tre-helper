@@ -1,39 +1,39 @@
-# vue-project
+# TRE Helper - 攤位搜尋系統
 
-This template should help get you started developing with Vue 3 in Vite.
+基於 Vue 3 + TypeScript + Vite 的攤位搜尋應用程式。
 
-## Recommended IDE Setup
+## 資料格式說明
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### `src/data/booths.json` 資料結構
 
-## Type Support for `.vue` Imports in TS
+本專案使用 JSON 格式儲存攤位資料，基於 TypeScript 介面定義：
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```typescript
+interface Booth {
+  id: string      // 攤位編號，如 "A01", "B02", "D-01"
+  name: string    // 攤位名稱，如 "未來飛翔", "TVC"
+  performers: string[]  // 演出者陣列，如 ["蓮實克蕾雅", "白崎水麗"]
+}
 ```
 
-### Compile and Hot-Reload for Development
+### JSON 資料範例
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+```json
+[
+  {
+    "id": "A01",
+    "name": "未來飛翔",
+    "performers": [
+      "蓮實克蕾雅",
+      "白崎水麗", 
+      "滝川菫",
+      "蘭蘭"
+    ]
+  },
+  {
+    "id": "A19",
+    "name": "UR AV",
+    "performers": []
+  }
+]
 ```
