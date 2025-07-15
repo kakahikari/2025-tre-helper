@@ -62,3 +62,6 @@ src/
 ### IDE 建議
 - VS Code + Volar 擴展 (需要禁用 Vetur)
 - 支持 Vue 3 TypeScript 類型檢查
+
+### 樣式設計
+- 樣式使用tailwindcss 4.x
