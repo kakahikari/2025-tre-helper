@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import type { Booth } from '@/types/booth'
 import boothsData from '@/data/booths.json'
 import BoothCard from '@/components/BoothCard.vue'
+import HamburgerMenu from '@/components/HamburgerMenu.vue'
 
 const booths = ref<Booth[]>(boothsData)
 const searchQuery = ref('')
@@ -26,12 +27,15 @@ const filteredBooths = computed(() => {
 
 <template>
   <div class="min-h-screen bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto">
       <!-- Header with Search -->
       <header class="bg-white shadow-sm border-b">
         <div class="sm:px-2 lg:px-4">
           <div class="flex items-center justify-between h-16">
-            <h1 class="text-xl font-semibold text-gray-900">2025 TRE 攤位搜尋</h1>
+            <div class="flex items-center space-x-3">
+              <HamburgerMenu />
+              <h1 class="text-xl font-semibold text-gray-900">2025 TRE 攤位搜尋</h1>
+            </div>
             <div class="flex-1 max-w-lg mx-8">
               <div class="relative">
                 <input
