@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.1.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.0.1...v1.1.0) (2025-07-16)
+
+
+### Features
+
+* 搜尋按鈕組件 + 清除功能 ([884b5fa](https://github.com/kakahikari/2025-tre-helper/commit/884b5fa94a9ac8b7fcdc82eba543f1092574410d))
+* 搜尋條件更新URL query ([1c5fba6](https://github.com/kakahikari/2025-tre-helper/commit/1c5fba67c6e3a88fc1b50015e19e744421d90550))
+* 攤位編號顏色依據分區 ([e70d905](https://github.com/kakahikari/2025-tre-helper/commit/e70d905d03e71e5239bbeadf7fbdb8bacabca25d))
+* 結果加入分類 ([7fdd097](https://github.com/kakahikari/2025-tre-helper/commit/7fdd0973388302c8c08b57173f1d5b6119ccd26d))
+
+
+### Bug Fixes
+
+* 全域padding, margin ([61a7f27](https://github.com/kakahikari/2025-tre-helper/commit/61a7f2754f5048a4f1b8ca91d254e72cd3568aee))
+* 底部留空間 ([0b6a21c](https://github.com/kakahikari/2025-tre-helper/commit/0b6a21cb4b331dfbcdae0310a640ab26e0b093ff))
+
 ## [1.0.1](https://github.com/kakahikari/2025-tre-helper/compare/v1.0.0...v1.0.1) (2025-07-16)
 
 
