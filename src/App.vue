@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useBreakpoints, breakpointsTailwind, useDark, useToggle } from '@vueuse/core'
 import type { Booth } from '@/types/booth'
 import boothsData from '@/data/booths.json'
@@ -9,6 +9,36 @@ import CategorySection from '@/components/CategorySection.vue'
 
 const booths = ref<Booth[]>(boothsData)
 const searchQuery = ref('')
+
+// 從 URL query 讀取搜尋關鍵字
+const getSearchQueryFromUrl = (): string => {
+  const urlParams = new URLSearchParams(window.location.search)
+  return urlParams.get('search') || ''
+}
+
+// 更新 URL query
+const updateUrlQuery = (query: string) => {
+  const url = new URL(window.location.href)
+  if (query.trim()) {
+    url.searchParams.set('search', query)
+  } else {
+    url.searchParams.delete('search')
+  }
+  window.history.replaceState({}, '', url.toString())
+}
+
+// 初始化時從 URL 讀取搜尋關鍵字
+onMounted(() => {
+  const urlQuery = getSearchQueryFromUrl()
+  if (urlQuery) {
+    searchQuery.value = urlQuery
+  }
+})
+
+// 監聽搜尋關鍵字變更，更新 URL
+watch(searchQuery, (newQuery) => {
+  updateUrlQuery(newQuery)
+})
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const isMobile = breakpoints.smaller('sm')
