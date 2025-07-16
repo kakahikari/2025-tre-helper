@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.1.0...v1.2.0) (2025-07-16)
+
+
+### Features
+
+* 攤位大圖 ([9d4436a](https://github.com/kakahikari/2025-tre-helper/commit/9d4436a6aa4daa2f91315b1110263fb1c2a4c3fc))
+
 ## [1.1.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.0.1...v1.1.0) (2025-07-16)
 
 
