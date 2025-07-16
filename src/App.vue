@@ -5,6 +5,7 @@ import type { Booth } from '@/types/booth'
 import boothsData from '@/data/booths.json'
 import BoothCard from '@/components/BoothCard.vue'
 import HamburgerMenu from '@/components/HamburgerMenu.vue'
+import ScrollToTop from '@/components/ScrollToTop.vue'
 
 const booths = ref<Booth[]>(boothsData)
 const searchQuery = ref('')
@@ -105,6 +106,9 @@ const filteredBooths = computed(() => {
           <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">請嘗試其他搜尋關鍵字</p>
         </div>
       </main>
+
+      <!-- Scroll to Top Component -->
+      <ScrollToTop />
     </div>
   </div>
 </template>
