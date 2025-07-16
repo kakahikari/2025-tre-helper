@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
 import type { Booth } from '@/types/booth'
 import boothsData from '@/data/booths.json'
 import BoothCard from '@/components/BoothCard.vue'
@@ -7,6 +8,13 @@ import HamburgerMenu from '@/components/HamburgerMenu.vue'
 
 const booths = ref<Booth[]>(boothsData)
 const searchQuery = ref('')
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const isMobile = breakpoints.smaller('sm')
+
+const searchPlaceholder = computed(() => {
+  return isMobile.value ? '關鍵字' : '搜尋攤位編號、名稱或藝人...'
+})
 
 const filteredBooths = computed(() => {
   if (!searchQuery.value.trim()) {
@@ -30,22 +38,22 @@ const filteredBooths = computed(() => {
     <div class="max-w-7xl mx-auto">
       <!-- Header with Search -->
       <header class="bg-white shadow-sm border-b">
-        <div class="sm:px-2 lg:px-4">
+        <div class="px-2 lg:px-4">
           <div class="flex items-center justify-between h-16">
             <div class="flex items-center space-x-3">
               <HamburgerMenu />
-              <h1 class="text-xl font-semibold text-gray-900">2025 TRE 攤位搜尋</h1>
+              <h1 class="lg:text-xl font-semibold text-gray-900">2025 TRE 攤位搜尋</h1>
             </div>
-            <div class="flex-1 max-w-lg mx-8">
-              <div class="relative">
+            <div class="flex-1 max-w-xs sm:max-w-lg ml-2 mr-4 sm:mx-8 flex justify-end">
+              <div class="relative w-auto">
                 <input
                   v-model="searchQuery"
                   type="text"
-                  placeholder="搜尋攤位編號、名稱或藝人..."
-                  class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                  :placeholder="searchPlaceholder"
+                  class="w-30 sm:w-80 pl-8 sm:pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm sm:text-base"
                 />
                 <svg
-                  class="absolute left-3 top-2.5 h-5 w-5 text-gray-400"
+                  class="absolute left-2 sm:left-3 top-2.5 h-4 w-4 sm:h-5 sm:w-5 text-gray-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -64,7 +72,7 @@ const filteredBooths = computed(() => {
       </header>
 
       <!-- Main Content -->
-      <main class="sm:px-2 lg:px-4 py-8">
+      <main class="p-2 sm:p-4">
         <!-- Search Results Info -->
         <div class="mb-6">
           <p class="text-sm text-gray-600">
@@ -74,7 +82,7 @@ const filteredBooths = computed(() => {
         </div>
 
         <!-- Booth Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
           <BoothCard v-for="booth in filteredBooths" :key="booth.id" :booth="booth" />
         </div>
 

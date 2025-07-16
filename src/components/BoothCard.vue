@@ -12,7 +12,7 @@ defineProps<Props>()
   <div
     class="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200"
   >
-    <div class="p-6 flex flex-col gap-3">
+    <div class="p-2 sm:p-4 flex flex-col gap-3">
       <div class="flex items-center mb-3 gap-3">
         <span
           class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
