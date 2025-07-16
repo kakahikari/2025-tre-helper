@@ -109,7 +109,14 @@ const idColorClasses = computed(() => {
             :key="performer"
             class="inline-flex items-center rounded bg-gray-100 px-2 py-1 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-200"
           >
-            {{ performer }}
+            <a
+              :href="`https://jkface.net/find-face?search=${performer}`"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="transition-colors duration-200 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              {{ performer }}
+            </a>
           </span>
         </div>
         <div v-else class="text-sm text-gray-500 dark:text-gray-400">尚未公布</div>
