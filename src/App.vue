@@ -6,6 +6,7 @@ import boothsData from '@/data/booths.json'
 import HamburgerMenu from '@/components/HamburgerMenu.vue'
 import ScrollToTop from '@/components/ScrollToTop.vue'
 import CategorySection from '@/components/CategorySection.vue'
+import SearchBox from '@/components/SearchBox.vue'
 
 const booths = ref<Booth[]>(boothsData)
 const searchQuery = ref('')
@@ -36,7 +37,7 @@ onMounted(() => {
 })
 
 // 監聽搜尋關鍵字變更，更新 URL
-watch(searchQuery, (newQuery) => {
+watch(searchQuery, newQuery => {
   updateUrlQuery(newQuery)
 })
 
@@ -53,10 +54,6 @@ const isDark = useDark({
   storage: localStorage,
 })
 const toggleDark = useToggle(isDark)
-
-const searchPlaceholder = computed(() => {
-  return isMobile.value ? '關鍵字' : '搜尋攤位編號、名稱或藝人...'
-})
 
 const filteredBooths = computed(() => {
   if (!searchQuery.value.trim()) {
@@ -110,28 +107,12 @@ const boothsByCategory = computed(() => {
                 2025 TRE 攤位搜尋
               </h1>
             </div>
-            <div class="mr-4 ml-2 flex max-w-xs flex-1 justify-end sm:mx-8 sm:max-w-lg">
-              <div class="relative w-auto">
-                <input
-                  v-model="searchQuery"
-                  type="text"
-                  :placeholder="searchPlaceholder"
-                  class="w-30 rounded-lg border border-gray-300 bg-white py-2 pr-4 pl-8 text-sm text-gray-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:w-80 sm:pl-10 sm:text-base dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-                />
-                <svg
-                  class="absolute top-2.5 left-2 h-4 w-4 text-gray-400 sm:left-3 sm:h-5 sm:w-5 dark:text-gray-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
+            <div class="flex max-w-xs flex-1 justify-end sm:mx-8 sm:max-w-lg">
+              <SearchBox
+                v-model="searchQuery"
+                :is-mobile="isMobile"
+                placeholder="搜尋攤位編號、名稱或藝人..."
+              />
             </div>
           </div>
         </div>
