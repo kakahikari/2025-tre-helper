@@ -47,7 +47,7 @@ const filteredBooths = computed(() => {
 
 <template>
   <div class="flex min-h-screen justify-center bg-gray-50 dark:bg-gray-900">
-    <div class="mx-auto max-w-7xl">
+    <div class="mx-auto w-full max-w-7xl">
       <!-- Header with Search -->
       <header
         class="sticky top-0 z-40 border-b bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800"
