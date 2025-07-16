@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.3.0...v1.4.0) (2025-07-16)
+
+
+### Features
+
+* 周邊商品套票 折扣碼 ([4fbeee2](https://github.com/kakahikari/2025-tre-helper/commit/4fbeee2963282c37fbe49cdfdd9971664937dc9e))
+
 ## [1.3.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.2.0...v1.3.0) (2025-07-16)
 
 
