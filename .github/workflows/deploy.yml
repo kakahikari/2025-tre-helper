@@ -1,15 +1,16 @@
+# main分支不是release時 不會執行deploy
+
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   build-and-deploy:
+    if: >
+      contains(github.event.head_commit.message, 'chore(main): release')
     runs-on: ubuntu-latest
-
     permissions:
       contents: read
       pages: write
