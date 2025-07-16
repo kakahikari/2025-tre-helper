@@ -2,8 +2,14 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
   font-weight: normal;
+}
+
+/* 只對 body 和 html 重置 margin，避免與 Tailwind utilities 衝突 */
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {

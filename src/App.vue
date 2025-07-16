@@ -110,8 +110,8 @@ const boothsByCategory = computed(() => {
       <!-- Main Content -->
       <main class="p-2 sm:p-4">
         <!-- Search Results Info -->
-        <div class="mb-6">
-          <p class="!mb-2 text-sm text-gray-600 dark:text-gray-300">
+        <div>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
             找到 {{ filteredBooths.length }} 個攤位
             <span v-if="searchQuery.trim()" class="ml-2"> 搜尋「{{ searchQuery }}」 </span>
           </p>

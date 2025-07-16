@@ -23,18 +23,18 @@ const toggleCollapse = () => {
 </script>
 
 <template>
-  <div class="mb-8">
+  <div>
     <!-- Category Header -->
     <button
       @click="toggleCollapse"
-      class="mb-4 flex w-full cursor-pointer items-center justify-between rounded-lg p-3 text-left transition-colors"
+      class="flex w-full cursor-pointer items-center justify-between rounded-lg p-3 text-left transition-colors"
     >
       <div class="flex items-center">
         <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
           {{ category }}
         </h2>
         <span
-          class="!ml-2 rounded-full bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800 dark:bg-blue-800 dark:text-blue-100"
+          class="ml-2 rounded-full bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800 dark:bg-blue-800 dark:text-blue-100"
         >
           {{ booths.length }}
         </span>

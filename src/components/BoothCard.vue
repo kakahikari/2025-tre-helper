@@ -13,13 +13,13 @@ defineProps<Props>()
     class="rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
   >
     <div class="flex flex-col gap-3 p-2 sm:p-4">
-      <div class="mb-3 flex items-center gap-3">
+      <div class="flex items-center gap-3">
         <span
           class="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200"
         >
           {{ booth.id }}
         </span>
-        <h3 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
           {{ booth.name }}
         </h3>
       </div>
