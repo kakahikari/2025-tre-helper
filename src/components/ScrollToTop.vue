@@ -35,10 +35,10 @@ onUnmounted(() => {
     <button
       v-if="isVisible"
       @click="scrollToTop"
-      class="fixed bottom-6 right-6 bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white p-3 rounded-full shadow-lg dark:shadow-gray-800/50 transition-colors duration-200 z-50"
+      class="fixed right-6 bottom-6 z-50 rounded-full bg-blue-500 p-3 text-white shadow-lg transition-colors duration-200 hover:bg-blue-600 dark:bg-blue-600 dark:shadow-gray-800/50 dark:hover:bg-blue-700"
       aria-label="回到頂端"
     >
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           stroke-linecap="round"
           stroke-linejoin="round"

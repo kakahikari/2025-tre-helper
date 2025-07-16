@@ -47,29 +47,29 @@ const filteredBooths = computed(() => {
 
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
-    <div class="max-w-7xl mx-auto">
+    <div class="mx-auto max-w-7xl">
       <!-- Header with Search -->
       <header
-        class="sticky top-0 z-40 bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700"
+        class="sticky top-0 z-40 border-b bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800"
       >
         <div class="px-2 lg:px-4">
-          <div class="flex items-center justify-between h-16">
+          <div class="flex h-16 items-center justify-between">
             <div class="flex items-center space-x-3">
               <HamburgerMenu :toggle-theme="toggleDark" :is-dark="isDark" />
-              <h1 class="lg:text-xl font-semibold text-gray-900 dark:text-white">
+              <h1 class="font-semibold text-gray-900 lg:text-xl dark:text-white">
                 2025 TRE 攤位搜尋
               </h1>
             </div>
-            <div class="flex-1 max-w-xs sm:max-w-lg ml-2 mr-4 sm:mx-8 flex justify-end">
+            <div class="mr-4 ml-2 flex max-w-xs flex-1 justify-end sm:mx-8 sm:max-w-lg">
               <div class="relative w-auto">
                 <input
                   v-model="searchQuery"
                   type="text"
                   :placeholder="searchPlaceholder"
-                  class="w-30 sm:w-80 pl-8 sm:pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm sm:text-base bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  class="w-30 rounded-lg border border-gray-300 bg-white py-2 pr-4 pl-8 text-sm text-gray-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:w-80 sm:pl-10 sm:text-base dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                 />
                 <svg
-                  class="absolute left-2 sm:left-3 top-2.5 h-4 w-4 sm:h-5 sm:w-5 text-gray-400 dark:text-gray-300"
+                  class="absolute top-2.5 left-2 h-4 w-4 text-gray-400 sm:left-3 sm:h-5 sm:w-5 dark:text-gray-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -98,12 +98,12 @@ const filteredBooths = computed(() => {
         </div>
 
         <!-- Booth Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+        <div class="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-3">
           <BoothCard v-for="booth in filteredBooths" :key="booth.id" :booth="booth" />
         </div>
 
         <!-- No Results -->
-        <div v-if="filteredBooths.length === 0" class="text-center py-12">
+        <div v-if="filteredBooths.length === 0" class="py-12 text-center">
           <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-white">找不到符合的攤位</h3>
           <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">請嘗試其他搜尋關鍵字</p>
         </div>
