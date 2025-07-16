@@ -37,6 +37,11 @@ const openGitHubRepo = () => {
   toggleMenu(false)
 }
 
+const openTicketDiscount = () => {
+  window.open('https://jkface.net/redexpo/2025/ticket/125/nicoAA', '_blank')
+  toggleMenu(false)
+}
+
 const themeIcon = computed(() => {
   return props.isDark
     ? 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
@@ -89,6 +94,23 @@ const themeText = computed(() => {
             />
           </svg>
           攤位大圖
+        </button>
+
+        <!-- 周邊商品套票 折扣碼 -->
+        <button
+          type="button"
+          class="flex w-full items-center px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+          @click="openTicketDiscount"
+        >
+          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+            />
+          </svg>
+          周邊商品套票 折扣碼
         </button>
 
         <!-- Theme Toggle -->
