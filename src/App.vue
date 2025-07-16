@@ -3,9 +3,9 @@ import { ref, computed } from 'vue'
 import { useBreakpoints, breakpointsTailwind, useDark, useToggle } from '@vueuse/core'
 import type { Booth } from '@/types/booth'
 import boothsData from '@/data/booths.json'
-import BoothCard from '@/components/BoothCard.vue'
 import HamburgerMenu from '@/components/HamburgerMenu.vue'
 import ScrollToTop from '@/components/ScrollToTop.vue'
+import CategorySection from '@/components/CategorySection.vue'
 
 const booths = ref<Booth[]>(boothsData)
 const searchQuery = ref('')
@@ -42,6 +42,26 @@ const filteredBooths = computed(() => {
       booth.performers.some(performer => performer.toLowerCase().includes(query))
     )
   })
+})
+
+// 按分類分組搜尋結果
+const boothsByCategory = computed(() => {
+  const grouped: Record<string, Booth[]> = {}
+
+  filteredBooths.value.forEach(booth => {
+    if (!grouped[booth.category]) {
+      grouped[booth.category] = []
+    }
+    grouped[booth.category].push(booth)
+  })
+
+  // 按分類名稱排序
+  return Object.keys(grouped)
+    .sort()
+    .reduce((sorted: Record<string, Booth[]>, key) => {
+      sorted[key] = grouped[key]
+      return sorted
+    }, {})
 })
 </script>
 
@@ -91,16 +111,19 @@ const filteredBooths = computed(() => {
       <main class="p-2 sm:p-4">
         <!-- Search Results Info -->
         <div class="mb-6">
-          <p class="text-sm text-gray-600 dark:text-gray-300">
+          <p class="!mb-2 text-sm text-gray-600 dark:text-gray-300">
             找到 {{ filteredBooths.length }} 個攤位
             <span v-if="searchQuery.trim()" class="ml-2"> 搜尋「{{ searchQuery }}」 </span>
           </p>
         </div>
 
-        <!-- Booth Grid -->
-        <div class="grid grid-cols-1 gap-2 sm:gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <BoothCard v-for="booth in filteredBooths" :key="booth.id" :booth="booth" />
-        </div>
+        <!-- Category Sections -->
+        <CategorySection
+          v-for="(categoryBooths, category) in boothsByCategory"
+          :key="category"
+          :category="category"
+          :booths="categoryBooths"
+        />
 
         <!-- No Results -->
         <div v-if="filteredBooths.length === 0" class="py-12 text-center">
