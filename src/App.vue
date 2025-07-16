@@ -49,7 +49,9 @@ const filteredBooths = computed(() => {
   <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
     <div class="max-w-7xl mx-auto">
       <!-- Header with Search -->
-      <header class="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700">
+      <header
+        class="sticky top-0 z-40 bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700"
+      >
         <div class="px-2 lg:px-4">
           <div class="flex items-center justify-between h-16">
             <div class="flex items-center space-x-3">
