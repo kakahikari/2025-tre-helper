@@ -108,7 +108,7 @@ const boothsByCategory = computed(() => {
       </header>
 
       <!-- Main Content -->
-      <main class="p-2 sm:p-4">
+      <main class="p-2 pb-12 sm:p-4 sm:pb-12">
         <!-- Search Results Info -->
         <div>
           <p class="text-sm text-gray-600 dark:text-gray-300">
