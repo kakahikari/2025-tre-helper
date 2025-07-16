@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.2.0...v1.3.0) (2025-07-16)
+
+
+### Features
+
+* GitHub Repo ([e934e4d](https://github.com/kakahikari/2025-tre-helper/commit/e934e4d691d8fc076dd0c053ccf0636c369bfda4))
+* 藝人名稱另開jkface ([85c34b4](https://github.com/kakahikari/2025-tre-helper/commit/85c34b46ee2fc2df7b690fd07b4836123ecf5ae3))
+
 ## [1.2.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.1.0...v1.2.0) (2025-07-16)
 
 
