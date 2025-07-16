@@ -107,7 +107,7 @@ const boothsByCategory = computed(() => {
                 2025 TRE 攤位搜尋
               </h1>
             </div>
-            <div class="flex max-w-xs flex-1 justify-end sm:mx-8 sm:max-w-lg">
+            <div class="flex max-w-xs flex-1 justify-end sm:max-w-lg">
               <SearchBox
                 v-model="searchQuery"
                 :is-mobile="isMobile"
