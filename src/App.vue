@@ -119,7 +119,7 @@ const boothsByCategory = computed(() => {
       </header>
 
       <!-- Main Content -->
-      <main class="p-2 pb-12 sm:p-4 sm:pb-12">
+      <main class="p-2 sm:p-4">
         <!-- Search Results Info -->
         <div>
           <p class="text-sm text-gray-600 dark:text-gray-300">
@@ -142,6 +142,18 @@ const boothsByCategory = computed(() => {
           <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">請嘗試其他搜尋關鍵字</p>
         </div>
       </main>
+
+      <!-- Footer -->
+      <footer class="mt-8 py-6">
+        <div class="px-2 lg:px-4">
+          <div class="text-center">
+            <p class="flex items-center justify-center text-sm text-gray-600 dark:text-gray-400">
+              <img src="./assets/logo.webp" alt="logo" class="mr-1 h-[1.5rem]" />
+              <span>© 2025 <a href="https://github.com/kakahikari/">kakahikari</a></span>
+            </p>
+          </div>
+        </div>
+      </footer>
 
       <!-- Scroll to Top Component -->
       <ScrollToTop />
