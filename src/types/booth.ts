@@ -4,9 +4,3 @@ export interface Booth {
   category: string // 攤位分類，如 A區, B區
   performers: string[] // 攤位陣容，轉換為陣列方便查詢
 }
-
-export interface BoothSearchOptions {
-  id?: string
-  name?: string
-  performer?: string
-}
