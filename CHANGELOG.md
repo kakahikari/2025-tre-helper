@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/kakahikari/2025-tre-helper/compare/v1.4.0...v1.4.1) (2025-07-17)
+
+
+### Bug Fixes
+
+* 多餘的mx ([75bd8bc](https://github.com/kakahikari/2025-tre-helper/commit/75bd8bcde2b6b2026cc918f6b7e140e76c2134b4))
+
 ## [1.4.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.3.0...v1.4.0) (2025-07-16)
 
 
