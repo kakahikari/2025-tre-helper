@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.4.1...v1.5.0) (2025-07-18)
+
+
+### Features
+
+* footer ([63e9591](https://github.com/kakahikari/2025-tre-helper/commit/63e959166baae0f47ff2a1790b0a5eb74e8cdcbe))
+
 ## [1.4.1](https://github.com/kakahikari/2025-tre-helper/compare/v1.4.0...v1.4.1) (2025-07-17)
 
 
