@@ -295,7 +295,7 @@
     "id": "C13",
     "name": "ChloeBABY",
     "category": "C區",
-    "performers": []
+    "performers": ["ChloeBABY"]
   },
   {
     "id": "C14",
@@ -313,7 +313,7 @@
     "id": "C16",
     "name": "Macca(麻卡)",
     "category": "C區",
-    "performers": []
+    "performers": ["Macca(麻卡)"]
   },
   {
     "id": "C17",
@@ -325,7 +325,7 @@
     "id": "C18",
     "name": "Darling Linda 達令琳妲",
     "category": "C區",
-    "performers": []
+    "performers": ["琳妲"]
   },
   {
     "id": "C19",
@@ -343,7 +343,7 @@
     "id": "C21",
     "name": "sherbet",
     "category": "C區",
-    "performers": []
+    "performers": ["橋本梨菜", "河路由希子", "青山光"]
   },
   {
     "id": "C22",
@@ -1046,7 +1046,7 @@
     "id": "H18",
     "name": "蘋蘋澎澎&潔♡雙胞胎姐妹",
     "category": "H區",
-    "performers": ["蘋蘋澎澎", "潔♡雙胞胎姐妹"]
+    "performers": ["蘋蘋澎澎", "啊潔"]
   },
   {
     "id": "H19",
