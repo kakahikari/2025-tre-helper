@@ -106,9 +106,6 @@ const timeTagColors: Record<EventDate, string> = {
             <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
               {{ STAGE_NAMES[activeStage] }} - {{ dateOptions[activeDate] }}
             </h2>
-            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-              共 {{ currentEvents.length }} 個活動
-            </p>
           </div>
 
           <!-- 有活動時顯示列表 -->
