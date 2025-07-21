@@ -2,7 +2,7 @@
 defineOptions({
   name: 'StageSchedulePage',
 })
-import { ref, computed } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import TagSelector from '@/components/TagSelector.vue'
 import type { StageName, EventDate, StageEvent } from '@/types/stage'
 import { STAGE_NAMES, EVENT_DATES } from '@/types/stage'
@@ -11,6 +11,46 @@ import stageScheduleData from '@/data/stage-schedule.json'
 // 當前選擇的舞台和日期
 const activeStage = ref<StageName>('main')
 const activeDate = ref<EventDate>('8/8')
+
+// 從 URL query 讀取參數
+const getStageFromUrl = (): StageName => {
+  const urlParams = new URLSearchParams(window.location.search)
+  const stage = urlParams.get('stage') as StageName
+  return STAGE_NAMES[stage] ? stage : 'main'
+}
+
+const getDateFromUrl = (): EventDate => {
+  const urlParams = new URLSearchParams(window.location.search)
+  const date = urlParams.get('date') as EventDate
+  return EVENT_DATES.includes(date) ? date : '8/8'
+}
+
+// 更新 URL query
+const updateUrlQuery = () => {
+  const url = new URL(window.location.href)
+  url.searchParams.set('stage', activeStage.value)
+  url.searchParams.set('date', activeDate.value)
+  window.history.replaceState({}, '', url.toString())
+}
+
+// 初始化時從 URL 讀取參數
+onMounted(() => {
+  const urlStage = getStageFromUrl()
+  const urlDate = getDateFromUrl()
+
+  if (urlStage !== activeStage.value) {
+    activeStage.value = urlStage
+  }
+
+  if (urlDate !== activeDate.value) {
+    activeDate.value = urlDate
+  }
+})
+
+// 監聽舞台和日期變更，更新 URL
+watch([activeStage, activeDate], () => {
+  updateUrlQuery()
+})
 
 // 從外部 JSON 文件導入舞台活動數據
 const scheduleData = ref<Record<StageName, Record<EventDate, StageEvent[]>>>(stageScheduleData)
