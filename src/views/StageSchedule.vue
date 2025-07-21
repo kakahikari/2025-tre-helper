@@ -21,7 +21,7 @@ const currentEvents = computed(() => {
 })
 
 // 舞台標籤順序
-const stageOrder: StageName[] = ['main', 'av-event', 'av-plus', 'jvid']
+const stageOrder: StageName[] = ['main', 'av-event', 'av-plus', 'jkf', 'jvid']
 
 // 日期標籤
 const dateOptions: Record<EventDate, string> = {
