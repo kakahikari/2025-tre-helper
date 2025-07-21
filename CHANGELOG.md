@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.5.0...v1.6.0) (2025-07-21)
+
+
+### Features
+
+* RWD樣式調整 ([4d12c8f](https://github.com/kakahikari/2025-tre-helper/commit/4d12c8f12caa1a8c884d6ae124ac7534279ba3c0))
+* 搜尋條件記錄在URL query ([7890d36](https://github.com/kakahikari/2025-tre-helper/commit/7890d3663b27166c8232530b3f41c34250b4843f))
+* 移除數量顯示 ([2e11b05](https://github.com/kakahikari/2025-tre-helper/commit/2e11b05c8b579d63f08388c74e19aec949616e1e))
+* 舞台增加jkf ([87358cd](https://github.com/kakahikari/2025-tre-helper/commit/87358cdf8214d0b36cb714bdeced6d4defed55f3))
+* 舞台時刻表 ([63f016e](https://github.com/kakahikari/2025-tre-helper/commit/63f016ea8f201684244dfb091f9f3c790ac7d158))
+* 舞台時間根據日期顏色不同 ([6e8f4de](https://github.com/kakahikari/2025-tre-helper/commit/6e8f4de9c8cf35a6ca4441a6712010835bec1386))
+
 ## [1.5.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.4.1...v1.5.0) (2025-07-18)
 
 
