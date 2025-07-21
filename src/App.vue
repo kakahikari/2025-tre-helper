@@ -25,7 +25,7 @@ const isMobile = breakpoints.smaller('sm')
 const pageTitle = computed(() => {
   switch (route.name) {
     case 'stage-schedule':
-      return '舞台時刻表'
+      return '2025 TRE 舞台時刻表'
     default:
       return '2025 TRE 攤位搜尋'
   }
