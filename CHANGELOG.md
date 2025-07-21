@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/kakahikari/2025-tre-helper/compare/v1.6.0...v1.6.1) (2025-07-21)
+
+
+### Bug Fixes
+
+* **ci:** 部署的重複 artifacts ([80e34af](https://github.com/kakahikari/2025-tre-helper/commit/80e34af2693089daedbc1d5a28542b8739011b3d))
+
 ## [1.6.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.5.0...v1.6.0) (2025-07-21)
 
 
