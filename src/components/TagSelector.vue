@@ -19,7 +19,7 @@ defineEmits<Emits>()
     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-gray-300">
       {{ label }}
     </label>
-    <div class="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
+    <div class="scrollbar-hide flex gap-2 overflow-x-auto pb-1">
       <button
         v-for="tag in tagOrder"
         :key="tag"

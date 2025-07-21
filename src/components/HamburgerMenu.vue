@@ -125,7 +125,7 @@ const themeText = computed(() => {
           舞台時刻表
         </button>
 
-        <div class="border-t border-gray-200 dark:border-gray-700 my-1"></div>
+        <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
 
         <!-- 攤位大圖 -->
         <button
