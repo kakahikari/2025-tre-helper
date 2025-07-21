@@ -73,7 +73,7 @@ const dateOptions: Record<EventDate, string> = {
 // 時間標籤顏色映射
 const timeTagColors: Record<EventDate, string> = {
   '8/8': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-  '8/9': 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200', 
+  '8/9': 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
   '8/10': 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
 }
 </script>
@@ -116,11 +116,14 @@ const timeTagColors: Record<EventDate, string> = {
             <div
               v-for="event in currentEvents"
               :key="event.id"
-              class="flex items-center rounded-lg border border-gray-200 p-4 transition-colors hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700/50"
+              class="flex items-center rounded-lg border border-gray-200 p-2 transition-colors hover:bg-gray-50 sm:p-4 dark:border-gray-700 dark:hover:bg-gray-700/50"
             >
               <div class="flex-shrink-0">
                 <div
-                  :class="['rounded-md px-3 py-1.5 text-sm font-semibold', timeTagColors[activeDate]]"
+                  :class="[
+                    'rounded-md px-3 py-1.5 text-sm font-semibold',
+                    timeTagColors[activeDate],
+                  ]"
                 >
                   {{ event.time }}
                 </div>
