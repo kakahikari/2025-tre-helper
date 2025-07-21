@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/kakahikari/2025-tre-helper/compare/v1.6.1...v1.6.2) (2025-07-21)
+
+
+### Bug Fixes
+
+* 改用createWebHashHistory ([5090901](https://github.com/kakahikari/2025-tre-helper/commit/50909014914fedfdbcb1d046bfa0d6d986a4de64))
+
 ## [1.6.1](https://github.com/kakahikari/2025-tre-helper/compare/v1.6.0...v1.6.1) (2025-07-21)
 
 
