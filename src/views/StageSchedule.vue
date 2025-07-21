@@ -69,6 +69,13 @@ const dateOptions: Record<EventDate, string> = {
   '8/9': '8/9 (六)',
   '8/10': '8/10 (日)',
 }
+
+// 時間標籤顏色映射
+const timeTagColors: Record<EventDate, string> = {
+  '8/8': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+  '8/9': 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200', 
+  '8/10': 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
+}
 </script>
 
 <template>
@@ -113,7 +120,7 @@ const dateOptions: Record<EventDate, string> = {
             >
               <div class="flex-shrink-0">
                 <div
-                  class="rounded-md bg-blue-100 px-3 py-1.5 text-sm font-semibold text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                  :class="['rounded-md px-3 py-1.5 text-sm font-semibold', timeTagColors[activeDate]]"
                 >
                   {{ event.time }}
                 </div>
