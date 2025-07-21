@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useToggle, onClickOutside } from '@vueuse/core'
+import { useRouter } from 'vue-router'
 
 interface Props {
   toggleTheme: () => void
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+const router = useRouter()
 
 const [isMenuOpen, toggleMenu] = useToggle(false)
 
@@ -21,6 +23,16 @@ onClickOutside(menuRef, () => {
 
 const handleThemeToggle = () => {
   props.toggleTheme()
+  toggleMenu(false)
+}
+
+const navigateToHome = () => {
+  router.push('/')
+  toggleMenu(false)
+}
+
+const navigateToStageSchedule = () => {
+  router.push('/stage-schedule')
   toggleMenu(false)
 }
 
@@ -79,6 +91,42 @@ const themeText = computed(() => {
       @click.stop
     >
       <div class="py-1">
+        <!-- 攤位搜尋 -->
+        <button
+          type="button"
+          class="flex w-full items-center px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+          @click="navigateToHome"
+        >
+          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          攤位搜尋
+        </button>
+
+        <!-- 舞台時刻表 -->
+        <button
+          type="button"
+          class="flex w-full items-center px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+          @click="navigateToStageSchedule"
+        >
+          <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            />
+          </svg>
+          舞台時刻表
+        </button>
+
+        <div class="border-t border-gray-200 dark:border-gray-700 my-1"></div>
+
         <!-- 攤位大圖 -->
         <button
           type="button"

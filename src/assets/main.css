@@ -2,3 +2,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @import './base.css';
+
+/* 隱藏滾輪條但保持滑動功能 */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}

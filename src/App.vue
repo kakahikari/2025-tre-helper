@@ -1,14 +1,37 @@
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from 'vue'
-import { useBreakpoints, breakpointsTailwind, useDark, useToggle } from '@vueuse/core'
-import type { Booth } from '@/types/booth'
-import boothsData from '@/data/booths.json'
+import { computed, ref, watch, onMounted, provide } from 'vue'
+import { useDark, useToggle, useBreakpoints, breakpointsTailwind } from '@vueuse/core'
+import { useRoute } from 'vue-router'
 import HamburgerMenu from '@/components/HamburgerMenu.vue'
 import ScrollToTop from '@/components/ScrollToTop.vue'
-import CategorySection from '@/components/CategorySection.vue'
 import SearchBox from '@/components/SearchBox.vue'
 
-const booths = ref<Booth[]>(boothsData)
+// 主題切換功能
+const isDark = useDark({
+  selector: 'html',
+  attribute: 'class',
+  valueDark: 'dark',
+  valueLight: '',
+  storageKey: 'vueuse-color-scheme',
+  storage: localStorage,
+})
+const toggleDark = useToggle(isDark)
+
+const route = useRoute()
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const isMobile = breakpoints.smaller('sm')
+
+// 根據當前路由計算頁面標題
+const pageTitle = computed(() => {
+  switch (route.name) {
+    case 'stage-schedule':
+      return '舞台時刻表'
+    default:
+      return '2025 TRE 攤位搜尋'
+  }
+})
+
+// 搜尋功能（只在首頁使用）
 const searchQuery = ref('')
 
 // 從 URL query 讀取搜尋關鍵字
@@ -41,61 +64,19 @@ watch(searchQuery, newQuery => {
   updateUrlQuery(newQuery)
 })
 
-const breakpoints = useBreakpoints(breakpointsTailwind)
-const isMobile = breakpoints.smaller('sm')
-
-// 主題切換功能
-const isDark = useDark({
-  selector: 'html',
-  attribute: 'class',
-  valueDark: 'dark',
-  valueLight: '',
-  storageKey: 'vueuse-color-scheme',
-  storage: localStorage,
-})
-const toggleDark = useToggle(isDark)
-
-const filteredBooths = computed(() => {
-  if (!searchQuery.value.trim()) {
-    return booths.value
-  }
-
-  const query = searchQuery.value.toLowerCase().trim()
-
-  return booths.value.filter(booth => {
-    return (
-      booth.id.toLowerCase().includes(query) ||
-      booth.name.toLowerCase().includes(query) ||
-      booth.performers.some(performer => performer.toLowerCase().includes(query))
-    )
-  })
+// 判斷是否顯示搜尋框
+const showSearchBox = computed(() => {
+  return route.name === 'home'
 })
 
-// 按分類分組搜尋結果
-const boothsByCategory = computed(() => {
-  const grouped: Record<string, Booth[]> = {}
-
-  filteredBooths.value.forEach(booth => {
-    if (!grouped[booth.category]) {
-      grouped[booth.category] = []
-    }
-    grouped[booth.category].push(booth)
-  })
-
-  // 按分類名稱排序
-  return Object.keys(grouped)
-    .sort()
-    .reduce((sorted: Record<string, Booth[]>, key) => {
-      sorted[key] = grouped[key]
-      return sorted
-    }, {})
-})
+// 提供搜尋查詢給子組件
+provide('searchQuery', searchQuery)
 </script>
 
 <template>
   <div class="flex min-h-screen justify-center bg-gray-50 dark:bg-gray-900">
     <div class="mx-auto w-full max-w-7xl">
-      <!-- Header with Search -->
+      <!-- Header -->
       <header
         class="sticky top-0 z-40 border-b bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800"
       >
@@ -104,10 +85,10 @@ const boothsByCategory = computed(() => {
             <div class="flex items-center space-x-3">
               <HamburgerMenu :toggle-theme="toggleDark" :is-dark="isDark" />
               <h1 class="font-semibold text-gray-900 lg:text-xl dark:text-white">
-                2025 TRE 攤位搜尋
+                {{ pageTitle }}
               </h1>
             </div>
-            <div class="flex max-w-xs flex-1 justify-end sm:max-w-lg">
+            <div v-if="showSearchBox" class="flex max-w-xs flex-1 justify-end sm:max-w-lg">
               <SearchBox
                 v-model="searchQuery"
                 :is-mobile="isMobile"
@@ -118,30 +99,8 @@ const boothsByCategory = computed(() => {
         </div>
       </header>
 
-      <!-- Main Content -->
-      <main class="p-2 sm:p-4">
-        <!-- Search Results Info -->
-        <div>
-          <p class="text-sm text-gray-600 dark:text-gray-300">
-            找到 {{ filteredBooths.length }} 個攤位
-            <span v-if="searchQuery.trim()" class="ml-2"> 搜尋「{{ searchQuery }}」 </span>
-          </p>
-        </div>
-
-        <!-- Category Sections -->
-        <CategorySection
-          v-for="(categoryBooths, category) in boothsByCategory"
-          :key="category"
-          :category="category"
-          :booths="categoryBooths"
-        />
-
-        <!-- No Results -->
-        <div v-if="filteredBooths.length === 0" class="py-12 text-center">
-          <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-white">找不到符合的攤位</h3>
-          <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">請嘗試其他搜尋關鍵字</p>
-        </div>
-      </main>
+      <!-- Router View -->
+      <RouterView />
 
       <!-- Footer -->
       <footer class="mt-8 py-6">
