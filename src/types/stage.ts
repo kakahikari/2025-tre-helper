@@ -11,7 +11,6 @@ export interface StageSchedule {
 }
 
 export type StageName = 'main' | 'av-event' | 'av-plus' | 'jkf' | 'jvid'
-export type EventDate = '8/8' | '8/9' | '8/10'
 
 export const STAGE_NAMES: Record<StageName, string> = {
   main: '主舞台',
@@ -21,4 +20,5 @@ export const STAGE_NAMES: Record<StageName, string> = {
   jvid: 'JVID舞台',
 }
 
-export const EVENT_DATES: EventDate[] = ['8/8', '8/9', '8/10']
+export const EVENT_DATES = ['8/8', '8/9', '8/10'] as const
+export type EventDate = typeof EVENT_DATES[number]

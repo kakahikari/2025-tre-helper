@@ -93,7 +93,7 @@ const timeTagColors: Record<EventDate, string> = {
         <TagSelector
           v-model:active-tag="activeDate"
           :tags="dateOptions"
-          :tag-order="EVENT_DATES"
+          :tag-order="[...EVENT_DATES]"
           label="日期"
         />
       </div>
