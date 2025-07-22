@@ -21,4 +21,4 @@ export const STAGE_NAMES: Record<StageName, string> = {
 }
 
 export const EVENT_DATES = ['8/8', '8/9', '8/10'] as const
-export type EventDate = typeof EVENT_DATES[number]
+export type EventDate = (typeof EVENT_DATES)[number]
