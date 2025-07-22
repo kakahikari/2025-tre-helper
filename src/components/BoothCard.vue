@@ -82,11 +82,19 @@ const idColorClasses = computed(() => {
   const colors = getCategoryColor(props.booth.category)
   return `${colors.bg} ${colors.text} ${colors.darkBg} ${colors.darkText}`
 })
+
+// 計算卡片背景顏色樣式
+const cardBackgroundClasses = computed(() => {
+  if (props.booth.name.includes('AV8D')) {
+    return 'bg-pink-50 dark:bg-pink-950'
+  }
+  return 'bg-white dark:bg-gray-800'
+})
 </script>
 
 <template>
   <div
-    class="rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+    :class="`rounded-lg border border-gray-200 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 ${cardBackgroundClasses}`"
   >
     <div class="flex flex-col gap-3 p-2 sm:p-4">
       <div class="flex items-center gap-3">
