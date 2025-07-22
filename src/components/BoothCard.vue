@@ -95,7 +95,7 @@ const idColorClasses = computed(() => {
         >
           {{ booth.id }}
         </span>
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white" translate="no">
           {{ booth.name }}
         </h3>
       </div>
@@ -115,7 +115,7 @@ const idColorClasses = computed(() => {
               rel="noopener noreferrer"
               class="transition-colors duration-200 hover:text-blue-600 dark:hover:text-blue-400"
             >
-              {{ performer }}
+              <span translate="no">{{ performer }}</span>
             </a>
           </span>
         </div>

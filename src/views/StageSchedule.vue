@@ -126,7 +126,7 @@ const timeTagColors: Record<EventDate, string> = {
                 </div>
               </div>
               <div class="ml-4 flex-1">
-                <h3 class="text-base font-medium text-gray-900 dark:text-white">
+                <h3 class="text-base font-medium text-gray-900 dark:text-white" translate="no">
                   {{ event.event }}
                 </h3>
               </div>

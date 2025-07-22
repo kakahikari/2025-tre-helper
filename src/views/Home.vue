@@ -58,7 +58,10 @@ const boothsByCategory = computed(() => {
         <div>
           <p class="text-sm text-gray-600 dark:text-gray-300">
             找到 {{ filteredBooths.length }} 個攤位
-            <span v-if="searchQuery.trim()" class="ml-2"> 搜尋「{{ searchQuery }}」 </span>
+            <span v-if="searchQuery.trim()" class="ml-2">
+              搜尋「<span translate="no">{{ searchQuery }}</span
+              >」
+            </span>
           </p>
         </div>
 
