@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.3](https://github.com/kakahikari/2025-tre-helper/compare/v1.6.2...v1.6.3) (2025-07-23)
+
+
+### Bug Fixes
+
+* 標注不翻譯攤位、藝人 ([7a7392a](https://github.com/kakahikari/2025-tre-helper/commit/7a7392af4e5eb89b794e8467f0e5bac05fdd9d75))
+
 ## [1.6.2](https://github.com/kakahikari/2025-tre-helper/compare/v1.6.1...v1.6.2) (2025-07-21)
 
 
