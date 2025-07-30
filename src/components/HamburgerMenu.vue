@@ -3,6 +3,13 @@ import { ref, computed } from 'vue'
 import { useToggle, onClickOutside } from '@vueuse/core'
 import { useRouter } from 'vue-router'
 
+// 擴展 Window 介面以包含 gtag
+declare global {
+  interface Window {
+    gtag?: (command: string, targetId: string, config?: Record<string, unknown>) => void
+  }
+}
+
 interface Props {
   toggleTheme: () => void
   isDark: boolean
@@ -21,22 +28,37 @@ onClickOutside(menuRef, () => {
   }
 })
 
+// GA 事件追蹤函數
+const trackEvent = (action: string, category: string = 'menu', label?: string) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+    })
+  }
+}
+
 const handleThemeToggle = () => {
+  const newTheme = props.isDark ? 'light' : 'dark'
+  trackEvent('theme_toggle', 'ui', newTheme)
   props.toggleTheme()
   toggleMenu(false)
 }
 
 const navigateToHome = () => {
+  trackEvent('navigation', 'menu', 'booth_search')
   router.push('/')
   toggleMenu(false)
 }
 
 const navigateToStageSchedule = () => {
+  trackEvent('navigation', 'menu', 'stage_schedule')
   router.push('/stage-schedule')
   toggleMenu(false)
 }
 
 const openBoothMap = () => {
+  trackEvent('external_link', 'menu', 'booth_map')
   window.open(
     'https://face-resource.hare200.com/board/activity_179/detail/resize/95ea7a02-a0c4-4cf8-967e-14dc208ffda9-7311.jpeg',
     '_blank',
@@ -45,11 +67,13 @@ const openBoothMap = () => {
 }
 
 const openGitHubRepo = () => {
+  trackEvent('external_link', 'menu', 'github_repo')
   window.open('https://github.com/kakahikari/2025-tre-helper', '_blank')
   toggleMenu(false)
 }
 
 const openTicketDiscount = () => {
+  trackEvent('external_link', 'menu', 'ticket_discount')
   window.open('https://jkface.net/redexpo/2025/ticket/125/nicoAA', '_blank')
   toggleMenu(false)
 }
