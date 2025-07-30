@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.6.4...v1.7.0) (2025-07-30)
+
+
+### Features
+
+* use GA ([9933998](https://github.com/kakahikari/2025-tre-helper/commit/9933998284c3b5676e3feae8a6555dd4d3fcd9ec))
+
 ## [1.6.4](https://github.com/kakahikari/2025-tre-helper/compare/v1.6.3...v1.6.4) (2025-07-28)
 
 
