@@ -45,6 +45,10 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      - name: Replace Google Analytics ID
+        run: |
+          sed -i 's/__GOOGLE_ANALYTICS_ID__/${{ secrets.GOOGLE_ANALYTICS_ID }}/g' index.html
+
       - name: Build
         run: pnpm build
         env:
