@@ -235,43 +235,43 @@
     "id": "C03",
     "name": "香瓜娛樂",
     "category": "C區",
-    "performers": []
+    "performers": ["香菱", "波奇", "Miya", "小紫", "小穎"]
   },
   {
     "id": "C04",
     "name": "香瓜娛樂",
     "category": "C區",
-    "performers": []
+    "performers": ["香菱", "波奇", "Miya", "小紫", "小穎"]
   },
   {
     "id": "C05",
     "name": "香瓜娛樂",
     "category": "C區",
-    "performers": []
+    "performers": ["香菱", "波奇", "Miya", "小紫", "小穎"]
   },
   {
     "id": "C06",
     "name": "TVC",
     "category": "C區",
-    "performers": []
+    "performers": ["Baby梓", "Hayley"]
   },
   {
     "id": "C07",
     "name": "Quibe-TVC",
     "category": "C區",
-    "performers": []
+    "performers": ["小湊優香", "Roroco", "星野秀奈", "小泱"]
   },
   {
     "id": "C08",
     "name": "Quibe-TVC",
     "category": "C區",
-    "performers": []
+    "performers": ["小湊優香", "Roroco", "星野秀奈", "小泱"]
   },
   {
     "id": "C09",
     "name": "魔術Channel-Davio",
     "category": "C區",
-    "performers": []
+    "performers": ["泥泥", "劉萱", "Grace", "晴晴", "紗南", "良良", "悌悌"]
   },
   {
     "id": "C10",
@@ -307,7 +307,7 @@
     "id": "C15",
     "name": "株式会社 GDL Entertainment",
     "category": "C區",
-    "performers": []
+    "performers": ["佐野渚"]
   },
   {
     "id": "C16",
@@ -325,7 +325,7 @@
     "id": "C18",
     "name": "Darling Linda 達令琳妲",
     "category": "C區",
-    "performers": ["琳妲"]
+    "performers": ["琳妲", "穎樂", "陽光廷廷"]
   },
   {
     "id": "C19",
@@ -944,7 +944,25 @@
     "id": "H01",
     "name": "CosForce",
     "category": "H區",
-    "performers": []
+    "performers": [
+      "紫姝 Murasaki",
+      "Dory",
+      "凌晨",
+      "Chale",
+      "Aki アキ",
+      "周感恩",
+      "小小柔",
+      "千千",
+      "銀璃Silverluri",
+      "名璃",
+      "雪狐",
+      "落落Raku",
+      "小咪",
+      "哈嚕",
+      "小仙",
+      "嵐嵐Arashi",
+      "章魚"
+    ]
   },
   {
     "id": "H02",
