@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.4](https://github.com/kakahikari/2025-tre-helper/compare/v1.7.3...v1.7.4) (2025-08-05)
+
+
+### Bug Fixes
+
+* update data ([b6d91e9](https://github.com/kakahikari/2025-tre-helper/commit/b6d91e9d27c06d4554631eccb22e794894e07a34))
+
 ## [1.7.3](https://github.com/kakahikari/2025-tre-helper/compare/v1.7.2...v1.7.3) (2025-07-30)
 
 
