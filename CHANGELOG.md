@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/kakahikari/2025-tre-helper/compare/v1.7.4...v1.8.0) (2026-05-19)
+
+
+### Features
+
+* 年份跳轉提示 ([068c4e4](https://github.com/kakahikari/2025-tre-helper/commit/068c4e4cb3cdf13debbb555552a9aa23e99caeb5))
+
 ## [1.7.4](https://github.com/kakahikari/2025-tre-helper/compare/v1.7.3...v1.7.4) (2025-08-05)
 
 
