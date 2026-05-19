@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 import HamburgerMenu from '@/components/HamburgerMenu.vue'
 import ScrollToTop from '@/components/ScrollToTop.vue'
 import SearchBox from '@/components/SearchBox.vue'
+import YearRedirectModal from '@/components/YearRedirectModal.vue'
 
 // 主題切換功能
 const isDark = useDark({
@@ -118,4 +119,7 @@ provide('searchQuery', searchQuery)
       <ScrollToTop />
     </div>
   </div>
+
+  <!-- 2026 年跳轉提示 -->
+  <YearRedirectModal />
 </template>
